@@ -1,8 +1,8 @@
 import React from 'react'
 import '../css/gallery.css'
-import doct1 from '../img/doctor.png'
-import doct2 from '../img/doctor.png'
-import doct3 from '../img/doctor.png'
+import doct1 from '../img/doctor1.png'
+import doct2 from '../img/doctor1.png'
+import doct3 from '../img/doctor1.png'
 import { GalleryItem } from './galleryitem'
 
 
