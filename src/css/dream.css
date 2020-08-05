@@ -1,0 +1,18 @@
+.container{
+   width: 100%;
+   padding: 5rem 2rem;
+   text-align: center;
+}
+.row{
+   display: flex;
+}
+.dream-img{
+   flex-basis: 100%;
+   padding: 3rem ;
+}
+.dream-photo{
+   border-radius: 15px;
+}
+.dream-info{
+   flex-basis: 100%;
+}

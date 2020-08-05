@@ -1,0 +1,53 @@
+.header{
+   text-align: center;
+   background: url(../img/bg.jpg) top center;
+   background-size: cover;
+   padding-bottom: 8rem;
+   position: relative;
+}
+.top{
+   display: flex;
+   justify-content: space-between;
+   color: #fff;
+   padding: 10px 20px;
+   border-bottom: 1px dotted rgba(255, 255, 255, .3);
+}
+.title{
+   color: #fff;
+   letter-spacing: 4px;
+   padding: 2rem 20rem;
+   margin-top: 1rem;
+}
+.paw{
+   margin: 20px auto;
+}
+.subtitle{
+   line-height: 1.3rem
+}
+.header-bottom{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+}
+
+@media screen and (max-width: 1220px){
+   .title{
+      padding: 2rem 15rem;
+   }
+}
+@media screen and (max-width: 980px){
+   .title{
+      padding: 2rem 10rem;
+   }
+}
+@media screen and (max-width: 800px){
+   .title{
+      padding: 2rem 5rem;
+   }
+}
+@media screen and (max-width: 420px){
+   .title{
+      padding: 2rem 2rem;
+   }
+}

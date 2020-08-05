@@ -1,0 +1,28 @@
+.sidemenu-item{
+   text-align: center;
+   padding: 1rem;
+   margin: 0 auto;
+}
+.sidemenu-link{
+   color: #822771;
+}
+.sidemenu-link:hover{
+   color: #822771;
+}
+.sidemenu-link:hover img{
+   box-shadow: 0px 0px 30px rgba(130, 39, 113, .7);
+}
+.sidemenu-img{
+   display: block;
+   height: auto; 
+   width: auto; 
+   max-width: 130px;
+   max-height: 130px;
+   border-radius: 50%;
+   border: 6px solid #822771;
+   overflow: hidden;
+}
+.sidemenu-text{
+   display: block;
+   padding-top: 1rem;
+}
