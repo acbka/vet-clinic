@@ -1,0 +1,51 @@
+
+.booking{
+   background: url(../img/layer2.png) 0 top no-repeat local,
+               url(../img/left-cat.jpg) 0 0 no-repeat fixed #f5eec4;            
+   position: relative;
+}
+.booking-container{
+   max-width: 600px;
+   margin-right: 0;
+   margin-left: auto;
+   text-align: center;
+   padding: 5rem 5rem 5rem 0;
+}
+.booking-title{
+   margin-top: 4rem;
+}
+.booking-calendar{
+   margin: 0;
+   padding: 0;
+   background: #F1F1F1;
+   border-spacing: 0;
+   border: 1px solid #822771;
+   border-collapse: collapse;
+}
+.booking-layer{
+   position: absolute;
+   bottom: -1px;
+   width: 100%;
+}
+thead{
+   background-color: #822771;
+   color: #fff;
+   text-transform: uppercase;
+}
+.month{
+   height: 3rem;
+}
+th{
+   height: 40px;
+}
+.days{
+   background-color: #722162;
+}
+tr{
+   width: 100%;
+}
+td{
+   width: 70px;
+   height: 65px;
+   border: 1px solid #ddd;
+}

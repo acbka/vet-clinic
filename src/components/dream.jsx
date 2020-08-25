@@ -1,7 +1,6 @@
 import React from 'react'
 import '../css/dream.css'
 import dream from '../img/dream.png'
-import pets from '../img/pet2.png'
 
 export const Dream = () => {
 

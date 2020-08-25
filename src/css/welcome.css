@@ -1,0 +1,9 @@
+.wrap{
+   display: flex;
+   justify-content: space-between;
+}
+.hours{
+   text-align: center;
+   padding: 2rem;
+   flex-grow: 1;
+}

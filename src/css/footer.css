@@ -1,0 +1,11 @@
+.footer{
+   background: url(../img/footer.png);
+   color: #fff;
+   line-height: 1.5rem;
+}
+.container-footer{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2.5rem 5rem;
+}

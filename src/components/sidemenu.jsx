@@ -10,7 +10,7 @@ export const SideMenu = () => {
 
    const sideMenu = [
       {img: sm1, text: "Clinic", alt: "clinic"}, 
-      {img: sm2, text: "Hospital", alt: "hospital"}, 
+      {img: sm2, text: "Hotel", alt: "hotel"}, 
       {img: sm3, text: "Beauty salon", alt: "salon"}, 
       {img: sm4, text: "Ambulance", alt: "ambulance"}
    ]
