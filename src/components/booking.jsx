@@ -66,31 +66,29 @@ export const Booking = () => {
 
    if (prevMonthStart !== 0) {
       for (let i = prevMonthStart; i <= months[prevMonth].days; i++) {
-         calendar.push({day: i, color: "#f5f5f5"})
+         calendar.push({day: i, bcolor: "#f5f5f5", color: "#ccc"})
       }
       for (let i = 1; i <= months[month].days; i++) {
-         calendar.push({day: i, color: "black"})
+         calendar.push({day: i, bcolor: "#fff", color: "#000"})
       }
       for (let i = 1; i < nextMonthEnd; i++) {
-         calendar.push({day: i, color: "grey"})
+         calendar.push({day: i, bcolor: "#f5f5f5", color: "#ccc"})
       }
    }
 
-   const lastMonth = {
-      backgroundColor: calendar.color
-    }
+  
    
    const weekDays = week.map((item, index) => 
       <li className="week-day" key={index}>{item}</li>
    )
 
    const dates = calendar.map((item, index) => 
-      <p className="one-day" key={index}>{item.day}</p>
+      <p className="one-day" style={{backgroundColor: item.bcolor, color: item.color}}  key={index}>{item.day}</p>
    )
 
    return(
       <div className="booking">
-         <div className="booking-container">
+         <div className="booking-container" >
             <h2 className="booking-title">Записаться на прием</h2>
             <div className="booking-calendar">
                {monthName} {year}
