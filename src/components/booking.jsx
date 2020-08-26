@@ -34,11 +34,11 @@ export const Booking = () => {
    ]
 
    let today = new Date();
-   let date = today.getDate();
+   //let date = today.getDate();
    let month = today.getMonth();
    let monthName = months[month].name;
    let year = today.getFullYear();
-   let day = today.getDay();
+   //let day = today.getDay();
 
    let firstDay = new Date(year, month, 1);
    let firstDayWeek = firstDay.getDay();
@@ -59,14 +59,14 @@ export const Booking = () => {
    let lastDay = new Date(year, month, months[month].days);
    let lastDayWeek = lastDay.getDay();
    if (lastDayWeek !== 6) {
-      nextMonthEnd = 6 - lastDayWeek + 1;  console.log("rrr", nextMonthEnd)
+      nextMonthEnd = 6 - lastDayWeek + 1;
    }
 
    let calendar = [];
 
    if (prevMonthStart !== 0) {
       for (let i = prevMonthStart; i <= months[prevMonth].days; i++) {
-         calendar.push({day: i, color: "grey"})
+         calendar.push({day: i, color: "#f5f5f5"})
       }
       for (let i = 1; i <= months[month].days; i++) {
          calendar.push({day: i, color: "black"})
@@ -75,229 +75,33 @@ export const Booking = () => {
          calendar.push({day: i, color: "grey"})
       }
    }
-   console.log("rrr", calendar)
 
+   const lastMonth = {
+      backgroundColor: calendar.color
+    }
    
+   const weekDays = week.map((item, index) => 
+      <li className="week-day" key={index}>{item}</li>
+   )
 
-   
-
-
-
-
-
+   const dates = calendar.map((item, index) => 
+      <p className="one-day" key={index}>{item.day}</p>
+   )
 
    return(
       <div className="booking">
          <div className="booking-container">
             <h2 className="booking-title">Записаться на прием</h2>
-            <table className="booking-calendar">
-		         <thead>		
-			         <tr className="month">
-				         <th colSpan="7">
-					         <span className="monthName">{monthName} {year}</span>
-					         <p  data-goto="2020-09-01" className="page-right"></p>				
-                     </th>
-                  </tr>
-                  <tr className="days">
-                     <th>mon</th>
-                     <th>tue</th>
-                     <th>wed</th>
-                     <th>thu</th>
-                     <th>fri</th>
-                     <th>sat</th>				
-                     <th>sun</th>			
-                  </tr>
-               </thead>
-               <tbody>
-
-                  
-                  <tr className="week">
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-28" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">28</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-29" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">29</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-30" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">30</span>
-                        </span>
-                     </td> 
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>           
-                  </tr>		
-                  <tr className="week">
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-28" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">28</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-29" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">29</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-30" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">30</span>
-                        </span>
-                     </td> 
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>           
-                  </tr>		
-                  <tr className="week">
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-28" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">28</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-29" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">29</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-30" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">30</span>
-                        </span>
-                     </td> 
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>           
-                  </tr>		
-                  <tr className="week">
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-28" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">28</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-29" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">29</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-30" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">30</span>
-                        </span>
-                     </td> 
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>           
-                  </tr>		
-                  <tr className="week">
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-28" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">28</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-29" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">29</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-30" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">30</span>
-                        </span>
-                     </td> 
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>
-                     <td data-date="2020-07-27" className="prev-month prev-date">
-                        <span className="date">
-                           <span className="number">27</span>
-                        </span>
-                     </td>           
-                  </tr>		
-               </tbody>
-            </table>
+            <div className="booking-calendar">
+               {monthName} {year}
+            </div>
+            <ul className="week">
+               {weekDays}
+            </ul>
+            <div className="calendar-body">
+               {dates}
+            </div>
+           
          </div>
          
          <div className="booking-layer">

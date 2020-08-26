@@ -17,11 +17,38 @@
 .booking-calendar{
    margin: 0;
    padding: 0;
-   background: #F1F1F1;
+   background: #822771;
    border-spacing: 0;
    border: 1px solid #822771;
-   border-collapse: collapse;
+   color: #fff;
+   line-height: 3rem;
+   font-size: 1.2rem;
+   letter-spacing: 2px;
+   text-transform: uppercase;
 }
+.week{
+   display: flex;
+   justify-content: space-between;
+   list-style: none;
+   background-color: #722162;
+   color: #fff;
+   text-transform: uppercase;
+}
+.week-day{
+   margin: 10px auto;
+   text-align: center;
+}
+.calendar-body{
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   background-color: #FAFAFA;
+}
+.one-day{
+   display: inline;
+   padding: 20px 10px;
+   border: 1px solid rgba(0,0,0,.1);
+}
+
 .booking-layer{
    position: absolute;
    bottom: -1px;
