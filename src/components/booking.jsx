@@ -38,7 +38,8 @@ export const Booking = () => {
    let month = today.getMonth();
    let monthName = months[month].name;
    let year = today.getFullYear();
-   //let day = today.getDay();
+
+   let currentDate = +new Date(); 
 
    let firstDay = new Date(year, month, 1);
    let firstDayWeek = firstDay.getDay();
@@ -66,25 +67,24 @@ export const Booking = () => {
 
    if (prevMonthStart !== 0) {
       for (let i = prevMonthStart; i <= months[prevMonth].days; i++) {
-         calendar.push({day: i, bcolor: "#f5f5f5", color: "#ccc"})
+         calendar.push({day: new Date(year, prevMonth, i), bcolor: "#f5f5f5", color: "#ccc"});
       }
       for (let i = 1; i <= months[month].days; i++) {
-         calendar.push({day: i, bcolor: "#fff", color: "#000"})
+         calendar.push({day: new Date(year, month, i), bcolor: "#fff", color: "#000"})
       }
       for (let i = 1; i < nextMonthEnd; i++) {
-         calendar.push({day: i, bcolor: "#f5f5f5", color: "#ccc"})
+         calendar.push({day: new Date(year, nextMonth, i), bcolor: "#f5f5f5", color: "#ccc"})
       }
    }
 
-  
-   
    const weekDays = week.map((item, index) => 
       <li className="week-day" key={index}>{item}</li>
    )
 
-   const dates = calendar.map((item, index) => 
-      <p className="one-day" style={{backgroundColor: item.bcolor, color: item.color}}  key={index}>{item.day}</p>
-   )
+   const dates = calendar.map((item, index) => { 
+      let disabledDate = +new Date(item.day) - currentDate; 
+      return <p className="one-day" style={{backgroundColor: item.bcolor, color: item.color, cursor: disabledDate > 0? "pointer" : "not-allowed", pointerEvents: disabledDate > 0? "auto" : "none"}}  key={index}>{item.day.getDate()}</p>
+   })
 
    return(
       <div className="booking">
@@ -99,9 +99,7 @@ export const Booking = () => {
             <div className="calendar-body">
                {dates}
             </div>
-           
          </div>
-         
          <div className="booking-layer">
             <img src={layer} alt=""/>
          </div>

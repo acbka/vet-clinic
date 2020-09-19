@@ -1,31 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import '../css/dream.css'
 import dream from '../img/dream.png'
+import {getData} from '../api/connect'
 
 export const Dream = () => {
 
    const [data, setData] = useState([{specName: "", specId: 0}]);
 
-   fetch('http://localhost:8081/specs', {
-      method: 'GET', 
-      type: 'opaque',
-      mode: 'cors', 
-      cache: 'no-cache', 
-      headers: {
-         'Content-Type': 'application/x-www-form-urlencoded', //'application/json'
-         'Accept': '*/*',
-      }, 
-      credentials: 'omit'
+   useEffect(() => {
+      getData().then(data => setData(data))
    })
-   .then(response => {
-      return response.json();
-   })
-   .then(data => { 
-      console.log("2222",data); // тут можно задать state
-      setData(data);
-      return data;
-   });
-  console.log("aaaa", data[0].SpecName)
+
+  
+ 
    return (
       <div className="dream" id="dream">
          <div className="container">
